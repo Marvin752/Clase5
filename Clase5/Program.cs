@@ -39,12 +39,15 @@ int sumanumeros = osuma(10, 20, 5);
 Console.WriteLine(sumanumeros);
 decimal promedio = osuma(30, 20, 40) / 3;
 Console.WriteLine(name + " Tiene promedio de " + promedio);
+Console.WriteLine();
+Console.ReadKey();
 
 try
 {
     int op = 0;
     do
     {
+        Console.Clear();
         Console.WriteLine("1) Suma");
         Console.WriteLine("2) Nombre");
         Console.WriteLine("3) Edad");
@@ -58,19 +61,25 @@ try
             {
                 case 1:
                     Suma();
+                    Console.ReadKey();
                     break;
                 case 2:
                     Datos();
+                    Console.ReadKey();
                     break;
                 case 3:
                     calculoEdad();
+                    Console.ReadKey();
                     break;
                 default:
                     Console.WriteLine("La opcion es invalida");
+                    Console.ReadKey();
                     break;
             }
         }
     } while (op != 4);
+    Console.WriteLine();
+    Console.WriteLine("Gracias por usar el programa :3");
 }
 catch(Exception error)
 {
