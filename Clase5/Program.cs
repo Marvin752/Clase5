@@ -40,33 +40,40 @@ Console.WriteLine(sumanumeros);
 decimal promedio = osuma(30, 20, 40) / 3;
 Console.WriteLine(name + " Tiene promedio de " + promedio);
 
-
-int op = 0;
-do
+try
 {
-    Console.WriteLine("1) Suma");
-    Console.WriteLine("2) Nombre");
-    Console.WriteLine("3) Edad");
-    Console.WriteLine("4) Salir");
-    Console.WriteLine();
-    Console.Write("> ");
-    op = Convert.ToInt32(Console.ReadLine());
-    if (op != 4)
+    int op = 0;
+    do
     {
-        switch (op)
+        Console.WriteLine("1) Suma");
+        Console.WriteLine("2) Nombre");
+        Console.WriteLine("3) Edad");
+        Console.WriteLine("4) Salir");
+        Console.WriteLine();
+        Console.Write("> ");
+        op = Convert.ToInt32(Console.ReadLine());
+        if (op != 4)
         {
-            case 1:
-                Suma();
-                break;
-            case 2:
-                Datos();
-                break;
-            case 3:
-                calculoEdad();
-                break;
-            default:
-                Console.WriteLine("La opcion es invalida");
-                break;
+            switch (op)
+            {
+                case 1:
+                    Suma();
+                    break;
+                case 2:
+                    Datos();
+                    break;
+                case 3:
+                    calculoEdad();
+                    break;
+                default:
+                    Console.WriteLine("La opcion es invalida");
+                    break;
+            }
         }
-    }
-} while (op != 4);
+    } while (op != 4);
+}
+catch(Exception error)
+{
+    Console.WriteLine();
+    Console.WriteLine("El formato ingresado no es valido " + error);
+}
